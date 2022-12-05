@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "286772647736",
+    "project_id": "yes-lms",
+    "storage_bucket": "yes-lms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286772647736:android:7db46edc27654d8dab13cd",
+        "android_client_info": {
+          "package_name": "com.first4connect.yeslms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "286772647736-7app3tqnj5854snmc021hhajcpburuq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR0liuxGR30v57Tj_yyVe0tDUoaSD7jSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "286772647736-7app3tqnj5854snmc021hhajcpburuq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286772647736:android:0dd52fb7b44e131bab13cd",
+        "android_client_info": {
+          "package_name": "com.yeslms.www"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "286772647736-7app3tqnj5854snmc021hhajcpburuq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR0liuxGR30v57Tj_yyVe0tDUoaSD7jSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "286772647736-7app3tqnj5854snmc021hhajcpburuq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,2 @@
+ENV=yesh
+BASE_URL=http:/$()/dev.yes.edu.pk/api/app.php/

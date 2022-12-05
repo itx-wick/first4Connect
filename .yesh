@@ -1,0 +1,2 @@
+ENV=yesh
+BASE_URL=http://listing.1st4connect.com/api/app.php/
