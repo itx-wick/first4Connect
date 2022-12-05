@@ -35,7 +35,17 @@ const Splash = props => {
         }}>
         <Image
           source={
-            Config.ENV == 'lmdc' ? IMAGES.lmdc_main_logo : IMAGES.yesh_main_logo
+            Config.ENV == 'cpmc'
+              ? IMAGES.cpmc_logo
+              : Config.ENV == 'lmdc'
+              ? IMAGES.lmdc_main_logo
+              : Config.ENV == 'rmcs'
+              ? IMAGES.rmcs_logo
+              : Config.ENV == 'rmdc'
+              ? IMAGES.rmdc_logo
+              : Config.ENV == 'yesh'
+              ? IMAGES.yesh_logo
+              : IMAGES.lmdc_logo
           }
           style={Styles.splash_logo}
         />

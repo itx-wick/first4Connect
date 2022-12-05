@@ -29,7 +29,7 @@ const Styles = StyleSheet.create({
     backgroundColor: COLORS.white,
   },
   splash_logo: {
-    width: RFValue(250),
+    width: RFValue(200),
     height: RFValue(150),
     resizeMode: 'contain',
   },

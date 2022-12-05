@@ -23,12 +23,11 @@
     "relink:assets": "react-native bundle --platform android --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --dev false --reset-cache --assets-dest android/app/src/main/res/",
     "upload": "git add . && git commit -m \"new updates\" && git push -u origin main",
     "link": "react-native link",
+    "cpmc:android": "react-native run-android --variant=cpmcDebug --appIdSuffix cpmc",
     "lmdc:android": "react-native run-android --variant=lmdcDebug --appIdSuffix lmdc",
-    "lmdc:android:release:variant": "react-native run-android --variant=lmdcRelease --appIdSuffix lmdc",
-    "lmdc:android:release": "cd android && ./gradlew clean && ./gradlew assemblelmdcRelease",
-    "yesh:android": "react-native run-android --variant=yeshDebug --appIdSuffix yesh",
-    "yesh:android:release:variant": "react-native run-android --variant=yeshRelease --appIdSuffix yesh",
-    "yesh:android:release": "cd android && ./gradlew clean && ./gradlew assembleyeshRelease"
+    "rmcs:android": "react-native run-android --variant=rmcsDebug --appIdSuffix rmcs",
+    "rmdc:android": "react-native run-android --variant=rmdcDebug --appIdSuffix rmdc",
+    "yesh:android": "react-native run-android --variant=yeshDebug --appIdSuffix yesh"
   },
   "dependencies": {
     "@freakycoder/react-native-bounceable": "^1.0.3",

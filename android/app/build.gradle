@@ -1,10 +1,16 @@
 apply plugin: "com.android.application"
 apply plugin: 'com.google.gms.google-services'
 project.ext.envConfigFiles = [
-    release: ".env.lmdc",
-    debug: ".env.lmdc",
+    release: ".env.rmcs",
+    debug: ".env.rmcs",
+    cpmcDebug: ".env.cpmc",
+    cpmcRelease: ".env.cpmc",
     lmdcRelease: ".env.lmdc",
     lmdcDebug: ".env.lmdc",
+    rmcsRelease: ".env.rmcs",
+    rmcsDebug: ".env.rmcs",
+    rmdcRelease: ".env.rmdc",
+    rmdcDebug: ".env.rmdc",
     yeshRelease: ".env.yesh",
     yeshDebug: ".env.yesh"
 ]
@@ -149,9 +155,33 @@ android {
     flavorDimensions "default"
 
     productFlavors {
+        cpmc {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.first4connect.cpmc"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.first4connect"
+            versionCode 1
+            versionName "1.0"
+        }
         lmdc {
             minSdkVersion rootProject.ext.minSdkVersion
             applicationId "com.first4connect.lmdc"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.first4connect"
+            versionCode 1
+            versionName "1.0"
+        }
+        rmcs {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.first4connect.rmcs"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.first4connect"
+            versionCode 1
+            versionName "1.0"
+        }
+        rmdc {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.first4connect.rmdc"
             targetSdkVersion rootProject.ext.targetSdkVersion
             resValue "string", "build_config_package", "com.first4connect"
             versionCode 1

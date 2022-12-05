@@ -1,8 +1,26 @@
 import Config from 'react-native-config';
 
 export default {
-  primary: Config.ENV == 'lmdc' ? '#d32f2f' : '#0d9347',
-  secondary: Config.ENV == 'lmdc' ? '#d32f2f' : '#3bb54a',
+  primary:
+    Config.ENV == 'cpmc' || 'lmdc'
+      ? '#d32f2f'
+      : Config.ENV == 'rmcs'
+      ? '#015197'
+      : Config.ENV == 'rmdc'
+      ? '#015197'
+      : Config.ENV == 'yesh'
+      ? '#0d9347'
+      : '#000000',
+  secondary:
+    Config.ENV == 'cpmc' || 'lmdc'
+      ? '#d32f2f'
+      : Config.ENV == 'rmcs'
+      ? '#015197'
+      : Config.ENV == 'rmdc'
+      ? '#015197'
+      : Config.ENV == 'yesh'
+      ? '#3bb54a'
+      : '#000000',
   white: '#FFFFFF',
   offWhite: '#f8f8ff',
   whiteOpacity: '#c2c2c2',

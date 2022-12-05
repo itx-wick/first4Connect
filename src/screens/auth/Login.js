@@ -83,8 +83,6 @@ function Login(props) {
       // if (obj.type === 'T') {
       //   setUserName('dev4-b@1st4connect.com');
       //   setPassword('39JZ$A1AA6$$');
-      //   // setUserName('mr.wick96@yahoo.com');
-      //   // setPassword('12345678');
       // } else if (obj.type === 'F' || obj.type === 'M' || obj.type === 'G') {
       //   setUserName('1001.p');
       //   setPassword('1001.p');
@@ -174,7 +172,17 @@ function Login(props) {
             <View style={Styles.logo_cont}>
               <Image
                 source={
-                  Config.ENV == 'lmdc' ? IMAGES.lmdc_logo : IMAGES.yesh_logo
+                  Config.ENV == 'cpmc'
+                    ? IMAGES.cpmc_logo
+                    : Config.ENV == 'lmdc'
+                    ? IMAGES.lmdc_logo
+                    : Config.ENV == 'rmcs'
+                    ? IMAGES.rmcs_logo
+                    : Config.ENV == 'rmdc'
+                    ? IMAGES.rmdc_logo
+                    : Config.ENV == 'yesh'
+                    ? IMAGES.yesh_logo
+                    : IMAGES.lmdc_logo
                 }
                 style={Styles.login_logo}
               />
