@@ -1,8 +1,8 @@
 apply plugin: "com.android.application"
 apply plugin: 'com.google.gms.google-services'
 project.ext.envConfigFiles = [
-    release: ".env.rmcs",
-    debug: ".env.rmcs",
+    release: ".env.lmdc",
+    debug: ".env.lmdc",
     cpmcDebug: ".env.cpmc",
     cpmcRelease: ".env.cpmc",
     lmdcRelease: ".env.lmdc",

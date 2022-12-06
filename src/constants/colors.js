@@ -2,22 +2,26 @@ import Config from 'react-native-config';
 
 export default {
   primary:
-    Config.ENV == 'cpmc' || 'lmdc'
+    Config.ENV == 'cpmc'
+      ? '#d32f2f'
+      : Config.ENV == 'lmdc'
       ? '#d32f2f'
       : Config.ENV == 'rmcs'
       ? '#015197'
       : Config.ENV == 'rmdc'
-      ? '#015197'
+      ? '#d32f2f'
       : Config.ENV == 'yesh'
       ? '#0d9347'
       : '#000000',
   secondary:
-    Config.ENV == 'cpmc' || 'lmdc'
+    Config.ENV == 'cpmc'
+      ? '#d32f2f'
+      : Config.ENV == 'lmdc'
       ? '#d32f2f'
       : Config.ENV == 'rmcs'
       ? '#015197'
       : Config.ENV == 'rmdc'
-      ? '#015197'
+      ? '#d32f2f'
       : Config.ENV == 'yesh'
       ? '#3bb54a'
       : '#000000',

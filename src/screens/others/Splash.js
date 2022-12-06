@@ -38,7 +38,7 @@ const Splash = props => {
             Config.ENV == 'cpmc'
               ? IMAGES.cpmc_logo
               : Config.ENV == 'lmdc'
-              ? IMAGES.lmdc_main_logo
+              ? IMAGES.lmdc_logo
               : Config.ENV == 'rmcs'
               ? IMAGES.rmcs_logo
               : Config.ENV == 'rmdc'

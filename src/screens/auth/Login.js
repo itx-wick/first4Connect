@@ -81,14 +81,42 @@ function Login(props) {
       setLoginAsErrorV(false);
       setSelectedOptType(obj.type);
       // if (obj.type === 'T') {
-      //   setUserName('dev4-b@1st4connect.com');
-      //   setPassword('39JZ$A1AA6$$');
+      //   if (Config.ENV == 'cpmc') {
+      //     setUserName('dev4-b@1st4connect.com');
+      //     setPassword('39JZ$A1AA6$$');
+      //     //Master: dev4@1st4connect.com
+      //     //Password: 39jz$A1AA6$$
+      //     setPassword('39JZ$A1AA6$$');
+      //   } else if (Config.ENV == 'rmcs') {
+      //     setUserName('dev4-b@1st4connect.com');
+      //     setPassword('39JZ$A1AA6$$@@');
+      //     //Master: dev4@1st4connect.com
+      //     //Password: 39jz$A1AA6$$@@
+      //   } else if (Config.ENV == 'rmdc') {
+      //     setUserName('dev4-b@1st4connect.com');
+      //     setPassword('39JZ$A1AA6$$BB');
+      //     //Master: dev4@1st4connect.com
+      //     //Password: A4AtifNZDDmU$
+      //   } else {
+      //     setUserName('dev4-b@1st4connect.com');
+      //     setPassword('39JZ$A1AA6$$');
+      //   }
       // } else if (obj.type === 'F' || obj.type === 'M' || obj.type === 'G') {
-      //   setUserName('1001.p');
-      //   setPassword('1001.p');
+      //   if (Config.ENV == 'rmcs') {
+      //     setUserName('1002.p');
+      //     setPassword('1002.p');
+      //   } else {
+      //     setUserName('1001.p');
+      //     setPassword('1001.p');
+      //   }
       // } else {
-      //   setUserName('1001.s');
-      //   setPassword('1001.s');
+      //   if (Config.ENV == 'rmcs') {
+      //     setUserName('1002.s');
+      //     setPassword('1002.s');
+      //   } else {
+      //     setUserName('1001.s');
+      //     setPassword('1001.s');
+      //   }
       // }
     };
   }
