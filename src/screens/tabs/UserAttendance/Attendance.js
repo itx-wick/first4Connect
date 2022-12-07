@@ -13,7 +13,7 @@ import {
 } from '../../../redux/tabs/tabsAction';
 import {Styles} from '../../../styles';
 import {Commons} from '../../../utils';
-import {FlatList} from 'react-native-gesture-handler';
+import {FlatList, ScrollView} from 'react-native-gesture-handler';
 import {postApiCall} from '../../../services/ApiServices';
 import {logout} from '../../../redux/auth/authAction';
 import {setLoader} from '../../../redux/common/commonAction';
@@ -351,9 +351,18 @@ function Attendance(props) {
               }
             />
           ) : (
-            <View style={{flex: 1}}>
-              <Image source={IMAGES.noData} style={Styles.noDataImg2} />
-            </View>
+            <ScrollView
+              refreshControl={
+                <RefreshControl
+                  //refresh control used for the Pull to Refresh
+                  refreshing={refreshing}
+                  onRefresh={onRefresh}
+                />
+              }>
+              <View style={{flex: 1}}>
+                <Image source={IMAGES.noData} style={Styles.noDataImg2} />
+              </View>
+            </ScrollView>
           )}
         </View>
         <DateTimePickerModal

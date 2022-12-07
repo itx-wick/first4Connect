@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Image, View} from 'react-native';
+import {Image, RefreshControl, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {Screen, Header, Loader, AnnouncementList} from '../../components';
@@ -9,6 +9,7 @@ import {COLORS, END_POINT, IMAGES, ROUTES} from '../../constants';
 import {Commons} from '../../utils';
 import {postApiCall} from '../../services/ApiServices';
 import {logout} from '../../redux/auth/authAction';
+import {ScrollView} from 'react-native-gesture-handler';
 
 function Announcement(props) {
   const dispatch = useDispatch();
@@ -85,9 +86,18 @@ function Announcement(props) {
               instance={props}
             />
           ) : (
-            <View style={{flex: 1}}>
-              <Image source={IMAGES.noData} style={Styles.noDataImg2} />
-            </View>
+            <ScrollView
+              refreshControl={
+                <RefreshControl
+                  //refresh control used for the Pull to Refresh
+                  refreshing={refreshing}
+                  onRefresh={onRefresh}
+                />
+              }>
+              <View style={{flex: 1}}>
+                <Image source={IMAGES.noData} style={Styles.noDataImg2} />
+              </View>
+            </ScrollView>
           )}
         </View>
       </Screen>

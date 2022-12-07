@@ -4,7 +4,11 @@ import React, {useEffect, useState} from 'react';
 import {View, RefreshControl, Image} from 'react-native';
 import CalendarStrip from 'react-native-calendar-strip';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
-import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
+import {
+  FlatList,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native-gesture-handler';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {useDispatch, useSelector} from 'react-redux';
 import {Screen, AppText} from '../../components';
@@ -167,9 +171,18 @@ function WeeklyTimetable(props) {
               }
             />
           ) : (
-            <View style={{flex: 1}}>
-              <Image source={IMAGES.noData} style={Styles.noDataImg2} />
-            </View>
+            <ScrollView
+              refreshControl={
+                <RefreshControl
+                  //refresh control used for the Pull to Refresh
+                  refreshing={refreshing}
+                  onRefresh={onRefresh}
+                />
+              }>
+              <View style={{flex: 1}}>
+                <Image source={IMAGES.noData} style={Styles.noDataImg2} />
+              </View>
+            </ScrollView>
           )}
         </View>
         {userList.length > 1 && (

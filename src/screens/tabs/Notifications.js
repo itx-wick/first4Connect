@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
-import {View, Image} from 'react-native';
+import {View, Image, RefreshControl} from 'react-native';
 import {FloatingAction} from 'react-native-floating-action';
+import {ScrollView} from 'react-native-gesture-handler';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   Screen,
@@ -113,9 +114,18 @@ function Notifications(props) {
               instance={props}
             />
           ) : (
-            <View style={{flex: 1}}>
-              <Image source={IMAGES.noData} style={Styles.noDataImg2} />
-            </View>
+            <ScrollView
+              refreshControl={
+                <RefreshControl
+                  //refresh control used for the Pull to Refresh
+                  refreshing={refreshing}
+                  onRefresh={onRefresh}
+                />
+              }>
+              <View style={{flex: 1}}>
+                <Image source={IMAGES.noData} style={Styles.noDataImg2} />
+              </View>
+            </ScrollView>
           )}
         </View>
         {userList.length > 1 && (

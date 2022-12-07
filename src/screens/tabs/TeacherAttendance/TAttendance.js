@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Image, Pressable, View} from 'react-native';
+import {Image, Pressable, RefreshControl, View} from 'react-native';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import {useDispatch, useSelector} from 'react-redux';
 import {FloatingAction} from 'react-native-floating-action';
@@ -22,6 +22,7 @@ import {Styles} from '../../../styles';
 import {postApiCall} from '../../../services/ApiServices';
 import {Commons} from '../../../utils';
 import {logout} from '../../../redux/auth/authAction';
+import {ScrollView} from 'react-native-gesture-handler';
 
 function TAttendance(props) {
   const dispatch = useDispatch();
@@ -224,9 +225,18 @@ function TAttendance(props) {
               instance={props}
             />
           ) : (
-            <View style={{flex: 1}}>
-              <Image source={IMAGES.noData} style={Styles.noDataImg2} />
-            </View>
+            <ScrollView
+              refreshControl={
+                <RefreshControl
+                  //refresh control used for the Pull to Refresh
+                  refreshing={refreshing}
+                  onRefresh={onRefresh}
+                />
+              }>
+              <View style={{flex: 1}}>
+                <Image source={IMAGES.noData} style={Styles.noDataImg2} />
+              </View>
+            </ScrollView>
           )}
         </View>
         <FloatingAction

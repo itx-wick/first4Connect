@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react';
 import {Image, View, RefreshControl} from 'react-native';
 import {Calendar} from 'react-native-calendars';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
-import {FlatList} from 'react-native-gesture-handler';
+import {FlatList, ScrollView} from 'react-native-gesture-handler';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {useDispatch, useSelector} from 'react-redux';
 import {Screen, AppText} from '../../components';
@@ -199,9 +199,18 @@ const MonthlyTimetable = props => {
               }
             />
           ) : (
-            <View style={{flex: 1}}>
-              <Image source={IMAGES.noData} style={Styles.noDataImg3} />
-            </View>
+            <ScrollView
+              refreshControl={
+                <RefreshControl
+                  //refresh control used for the Pull to Refresh
+                  refreshing={refreshing}
+                  onRefresh={onRefresh}
+                />
+              }>
+              <View style={{flex: 1}}>
+                <Image source={IMAGES.noData} style={Styles.noDataImg3} />
+              </View>
+            </ScrollView>
           )}
         </View>
         {userList.length > 1 && (
