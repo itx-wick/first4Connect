@@ -258,7 +258,7 @@ export default {
   snackBar: (msg, bgColor) => {
     Snackbar.show({
       text: msg,
-      duration: Snackbar.LENGTH_LONG,
+      duration: Snackbar.LENGTH_INDEFINITE,
       textColor: '#fff',
       numberOfLines: 2,
       backgroundColor: bgColor,
